@@ -3,4 +3,19 @@
     <string name="start_run">Start Your Run</string>
     <string name="random_run">Random Run For You</string>
     <string name="last_run">Last Run</string>
+    <string name="pop_run1">Shoal Creek</string>
+    <string name="pop_run2">Barton Creek</string>
+    <string name="pop_run3">Pease Park</string>
+    <string name="pop_run4">Barton Springs</string>
+    <string name="pop_run5">Town Lake</string>
+    <string name="pop_run6">The Greenbelt</string>
+    <string name="popular_runs">Popular Runs</string>
+    <string name="date1">3/22/2022</string>
+    <string name="date2">3/17/2022</string>
+    <string name="miles1">Miles: 3.56</string>
+    <string name="miles2">Miles: 2.10</string>
+    <string name="time1">Time: 29:15</string>
+    <string name="time2">Time: 16:10</string>
+    <string name="recent_runs">Recent Runs</string>
+
 </resources>
