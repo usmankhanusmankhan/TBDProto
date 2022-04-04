@@ -9,6 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TBDProto">
+        <activity android:name=".PopularRuns"
+            android:parentActivityName=".MainActivity"
+            android:label="Popular Runs"/>
+        <activity android:name=".RecentRuns"
+            android:parentActivityName=".MainActivity"
+            android:label="Recent Runs" />
+        <activity android:name=".RunningMap"
+            android:parentActivityName=".MainActivity"
+            android:label="Map" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
