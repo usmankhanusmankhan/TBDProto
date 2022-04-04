@@ -7,5 +7,6 @@ class RunningMap : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.running_map)
+        val intent = intent
     }
 }

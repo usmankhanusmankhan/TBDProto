@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tbdproto.R
 import com.example.tbdproto.RunningMap
 import com.example.tbdproto.model.MainCardTitles
+import android.os.Bundle
 
 class ItemAdapter (private val context: Context,
                    private val dataset: List<MainCardTitles>
@@ -35,10 +36,16 @@ class ItemAdapter (private val context: Context,
 
         holder.imageView.setOnClickListener () {
             val context = holder.view.context
-            val intent = Intent(context, RunningMap::class.java)
+            val intent = Intent(context, RunningMap::class.java).apply {
+                putExtra("string", holder.textView.text)
+                putExtra("picture", holder.imageView.toString())
+            }
+            context.startActivity(intent)
         }
     }
 
     override fun getItemCount() = dataset.size
 }
+
+
 
