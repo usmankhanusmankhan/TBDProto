@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         
-        <service android:name="RunningMap"
+        <service android:name=".services.TrackingService"
             android:foregroundServiceType="location" />
 
         <meta-data
