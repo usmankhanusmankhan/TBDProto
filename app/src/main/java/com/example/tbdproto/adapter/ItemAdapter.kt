@@ -52,6 +52,10 @@ class ItemAdapter (private val context: Context,
                 context.startActivity(intent)
             }
 
+            //This is where the navigation gets messed up and navigates to the Running
+            //Map screen instead of the popular run screen, we need to get it to navigate
+            //to the right place
+
             if (holder.textView.text == "Random Run For You") {
                 val intent = Intent(context, PopularRuns::class.java).apply {
                     putExtra("popular", holder.textView.text)
