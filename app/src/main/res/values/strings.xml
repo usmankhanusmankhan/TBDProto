@@ -17,5 +17,6 @@
     <string name="time1">Time: 29:15</string>
     <string name="time2">Time: 16:10</string>
     <string name="recent_runs">Recent Runs</string>
+    <string name="api_key">AIzaSyDzMiaQSMFjekQCRhn6kTC9ni-U3tMSvJc</string>
 
 </resources>
