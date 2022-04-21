@@ -1,6 +1,5 @@
 package com.example.tbdproto.database
 
-import androidx.databinding.adapters.Converters
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
@@ -9,7 +8,7 @@ import androidx.room.TypeConverters
     entities = [Run::class],
     version = 1
 )
-@TypeConverters(convert::class)
+@TypeConverters(Convert::class)
 abstract class RunningDatabase : RoomDatabase() {
 
     abstract fun getRunDao(): RunDAO

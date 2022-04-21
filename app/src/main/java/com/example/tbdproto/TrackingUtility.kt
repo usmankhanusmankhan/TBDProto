@@ -21,4 +21,6 @@ object TrackingUtility {
                 Manifest.permission.ACCESS_BACKGROUND_LOCATION
             )
         }
-    }
+}
+
+
