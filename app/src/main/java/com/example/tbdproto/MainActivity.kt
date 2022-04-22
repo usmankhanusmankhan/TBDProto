@@ -7,6 +7,7 @@ import com.example.tbdproto.adapter.ItemAdapter
 import com.example.tbdproto.datasource.Datasource
 
 class MainActivity : AppCompatActivity() {
+    // NOTE: I changed the Launcher activity to MapActivity in the AndroidManifest. Revert back to MainActivity.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

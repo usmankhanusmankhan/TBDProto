@@ -64,6 +64,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         map.uiSettings.isZoomControlsEnabled = true
     }
 
+    // Function to start tracking user activity. Triggered on start button pressed
     private fun startTracking() {
         binding.container.txtPace.text = ""
         binding.container.txtDistance.text = ""
@@ -74,6 +75,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         presenter.startTracking()
     }
 
+    // Function to stop tracking and clear route.
     private fun stopTracking() {
         presenter.stopTracking()
         binding.container.txtTime.stop()
@@ -90,6 +92,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         drawRoute(ui.userPath)
     }
 
+    // Function to draw a list of LatLng objects onto the map.
     private fun drawRoute(locations: List<LatLng>) {
         val polylineOptions = PolylineOptions()
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import com.google.android.gms.maps.model.LatLng
 
+// Data class to store the data of the view. ViewModel
 data class Ui(
     val formattedPace: String,
     val formattedDistance: String,
@@ -29,6 +30,7 @@ class MapPresenter(private val activity: AppCompatActivity) {
     private val stepCounter = StepCounter(activity)
     private val permissionsManager = PermissionsManager(activity, locationProvider, stepCounter)
 
+    // Set listeners for the live data parameters steps, location and distance.
     fun onViewCreated() {
         stepCounter.liveSteps.observe(activity) { steps ->
             val current = ui.value
@@ -51,14 +53,16 @@ class MapPresenter(private val activity: AppCompatActivity) {
             ui.value = current?.copy(formattedDistance = formattedDistance)
         }
     }
+    //When the map is loaded, we request for user location
     fun onMapLoaded() {
         permissionsManager.requestUserLocation()
     }
+    // Fun to start tracking and request fitness activity permisson
     fun startTracking() {
         locationProvider.trackUser()
         permissionsManager.requestActivityRecognition()
     }
-
+    // Fun to stop tracking
     fun stopTracking() {
         locationProvider.stopTracking()
         stepCounter.unloadStepCounter()
