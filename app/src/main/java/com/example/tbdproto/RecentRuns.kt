@@ -6,6 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 class RecentRuns : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.recent_runs)
+        setContentView(R.layout.activity_main)
     }
 }
