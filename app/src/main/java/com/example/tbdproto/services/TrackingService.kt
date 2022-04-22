@@ -52,6 +52,10 @@ class TrackingService : LifecycleService() {
         })
     }
 
+    private fun pauseService () {
+        isTracking.postValue(false)
+    }
+
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         intent?.let {
@@ -61,6 +65,7 @@ class TrackingService : LifecycleService() {
                 }
                 ACTION_PAUSE_SERVICE -> {
                     Timber.d("Paused service")
+                    pauseService()
                 }
                 ACTION_STOP_SERVICE -> {
                     Timber.d("Stopped service")
