@@ -10,6 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TBDProto">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         <activity android:name=".PopularRuns"
             android:parentActivityName=".MainActivity"
             android:label="Popular Runs"/>
@@ -21,12 +26,8 @@
             android:label="Map" />
         <activity
             android:name=".MapsActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="true"
+            android:parentActivityName=".MainActivity">
         </activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
