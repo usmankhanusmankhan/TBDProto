@@ -6,6 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 class PopularRuns : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.running_map)
+        setContentView(R.layout.popular_runs)
     }
 }

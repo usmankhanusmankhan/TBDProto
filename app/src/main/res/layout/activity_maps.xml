@@ -18,6 +18,16 @@
         tools:context=".MapsActivity" />
 
     <Button
+        android:id="@+id/btnPause"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="Pause"
+        android:text="@string/pause_label"
+        android:textColor="?android:attr/textColorPrimary"
+        android:visibility="gone"/>
+
+    <Button
         android:id="@+id/btnStartStop"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="match_parent"

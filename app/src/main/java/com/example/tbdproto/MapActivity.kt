@@ -3,7 +3,13 @@ package com.example.tbdproto
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.SystemClock
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import android.view.GestureDetector
+import android.view.GestureDetector.SimpleOnGestureListener
+import android.view.MotionEvent
+import androidx.core.view.isVisible
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -31,11 +37,21 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        binding.btnStartStop.setOnClickListener {
+        binding.btnStartStop.setOnClickListener  {
             if (binding.btnStartStop.text == getString(R.string.start_label)) {
                 startTracking()
                 binding.btnStartStop.setText(R.string.stop_label)
+                binding.btnPause.setVisibility(View.VISIBLE)
+                Toast.makeText(applicationContext, "Hold Stop button for 5 seconds", Toast.LENGTH_LONG).show();
             } else {
+                val gestureDetector = GestureDetector(object : SimpleOnGestureListener() {
+                    override fun onLongPress(e: MotionEvent) {
+                        Toast.makeText(applicationContext, "Run Stopped and Saved", Toast.LENGTH_LONG).show()
+                    }
+                })
+                fun onTouchEvent(event: MotionEvent?): Boolean {
+                    return gestureDetector.onTouchEvent(event)
+                }
                 stopTracking()
                 binding.btnStartStop.setText(R.string.start_label)
             }
