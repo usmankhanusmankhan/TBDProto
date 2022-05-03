@@ -13,6 +13,7 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.tbdproto.MainActivity
 import com.example.tbdproto.MapsActivity
 import com.example.tbdproto.R
 import com.example.tbdproto.databinding.ActivityLoginBinding
@@ -104,7 +105,7 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUiWithUser(model: LoggedInUserView) {
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName
-        val myIntent = Intent(this, MapsActivity::class.java)
+        val myIntent = Intent(this, MainActivity::class.java)
         startActivity(myIntent)
         Toast.makeText(
             applicationContext,

@@ -4,8 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
-import android.view.Menu
-import android.view.MenuItem
+import android.view.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tbdproto.data.LoginDataSource
 import com.example.tbdproto.data.LoginRepository
@@ -58,11 +58,21 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        binding.btnStartStop.setOnClickListener {
+        binding.btnStartStop.setOnClickListener  {
             if (binding.btnStartStop.text == getString(R.string.start_label)) {
                 startTracking()
                 binding.btnStartStop.setText(R.string.stop_label)
+                binding.btnPause.setVisibility(View.VISIBLE)
+                Toast.makeText(applicationContext, "Hold Stop button for 5 seconds", Toast.LENGTH_LONG).show();
             } else {
+                val gestureDetector = GestureDetector(object : GestureDetector.SimpleOnGestureListener() {
+                    override fun onLongPress(e: MotionEvent) {
+                        Toast.makeText(applicationContext, "Run Stopped and Saved", Toast.LENGTH_LONG).show()
+                    }
+                })
+                fun onTouchEvent(event: MotionEvent?): Boolean {
+                    return gestureDetector.onTouchEvent(event)
+                }
                 stopTracking()
                 binding.btnStartStop.setText(R.string.start_label)
             }
