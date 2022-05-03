@@ -1,9 +1,14 @@
 package com.example.tbdproto
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tbdproto.data.LoginDataSource
+import com.example.tbdproto.data.LoginRepository
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -11,6 +16,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.PolylineOptions
 import com.example.tbdproto.databinding.ActivityMapsBinding
+import com.example.tbdproto.ui.login.LoginActivity
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -18,6 +24,27 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var binding: ActivityMapsBinding
 
     private val presenter = MapPresenter(this)
+
+    // create an action bar button
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    // handle button activities
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id: Int = item.getItemId()
+        if (id == R.id.action_settings) {
+            val loginRepository = LoginRepository(
+                dataSource = LoginDataSource())
+            loginRepository.logout()
+            val myIntent = Intent(this, LoginActivity::class.java)
+            startActivity(myIntent)
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_TBDProto)

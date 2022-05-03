@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "475243382763",
+    "project_id": "keen-life-281211",
+    "storage_bucket": "keen-life-281211.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475243382763:android:61e9a2b676f4655881fbae",
+        "android_client_info": {
+          "package_name": "com.example.tbdproto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475243382763-gd0p6cf3pd0h96k7uodfnpq6fhdjj1ve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbSrPqi4EXOeRIuKODV3OAW-8vNLT51ow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475243382763-gd0p6cf3pd0h96k7uodfnpq6fhdjj1ve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

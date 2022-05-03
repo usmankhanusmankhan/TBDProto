@@ -3,8 +3,6 @@ package com.example.tbdproto
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tbdproto.adapter.ItemAdapter
-import com.example.tbdproto.datasource.Datasource
 
 class MainActivity : AppCompatActivity() {
     // NOTE: I changed the Launcher activity to MapActivity in the AndroidManifest. Revert back to MainActivity.
